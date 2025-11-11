@@ -7,24 +7,70 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+
+    "scheme": "thefirebaseapp",
+    "owner": "your-username",
+
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.thefirebaseapp",
+      "usesAppleSignIn": false
     },
+
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "package": "com.thefirebaseapp",
+      "permissions": [],
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "thefirebaseapp"
+            },
+            {
+              "scheme": "fb858023753453975"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     },
+
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+
+    "plugins": [
+      "expo-web-browser",
+      [
+        "react-native-fbsdk-next",
+        {
+          "appID": "858023753453975",
+          "clientToken": "56f52a83ba1f18ca7cfc81433aa374eb",
+          "displayName": "TheFirebaseApp",
+          "scheme": "fb858023753453975",
+          "advertiserIDCollectionEnabled": true,
+          "autoInitEnabled": true
+        }
+      ]
+    ],
+
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
     }
   }
 }
